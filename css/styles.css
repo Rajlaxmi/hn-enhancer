@@ -1,0 +1,236 @@
+/* styles.css - Minimalistic design for Hacker News */
+:root {
+    --text-color: #2b2b2b;
+    --bg-color: #ffffff;
+    --accent-color: #2b2b2b;
+    --link-color: #2b2b2b;
+    --meta-color: #666;
+    --tag-bg: #f5f5f5;
+}
+
+/* Reset and base styles */
+body.hn-enhanced {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    line-height: 1.4 !important;
+    color: var(--text-color) !important;
+    background: var(--bg-color) !important;
+    padding: 0.5rem !important;
+    display: flex !important;
+    gap: 2rem !important;
+    margin: 0 !important;
+    max-width: none !important;
+}
+
+/* Hide original HN elements */
+body.hn-enhanced > center,
+body.hn-enhanced > script,
+body.hn-enhanced .pagetop,
+body.hn-enhanced .yclinks {
+    display: none !important;
+}
+
+/* Main content container */
+body.hn-enhanced .main-content {
+    flex: 1 !important;
+    max-width: 800px !important;
+    margin: 0 auto !important;
+}
+
+/* Header */
+body.hn-enhanced h1 {
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 1rem !important;
+    letter-spacing: -0.5px !important;
+}
+
+/* Story container */
+body.hn-enhanced .story {
+    margin-bottom: 0.75rem !important;
+    border-bottom: 1px solid #eee !important;
+    padding-bottom: 0.75rem !important;
+}
+
+body.hn-enhanced .story:last-child {
+    border-bottom: none !important;
+}
+
+/* Story header with title and meta */
+body.hn-enhanced .story-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+    margin-bottom: 0.15rem !important;
+}
+
+body.hn-enhanced .story-title {
+    flex: 1 !important;
+    display: flex !important;
+    gap: 0.5rem !important;
+    align-items: baseline !important;
+    flex-wrap: wrap !important;
+}
+
+body.hn-enhanced .story-title h2 {
+    margin: 0 !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.3px !important;
+    line-height: 1.3 !important;
+}
+
+body.hn-enhanced .story a {
+    color: var(--link-color) !important;
+    text-decoration: none !important;
+}
+
+body.hn-enhanced .story a:hover {
+    text-decoration: underline !important;
+}
+
+/* URL line */
+body.hn-enhanced .url-line {
+    display: flex !important;
+    gap: 0.3rem !important;
+    align-items: center !important;
+    margin: 0 0 0.3em 0 !important;
+    font-size: 0.8em !important;
+    color: #666 !important;
+    line-height: 1 !important;
+    opacity: 0.8 !important;
+}
+
+body.hn-enhanced .url {
+    color: #999 !important;
+    font-size: 0.7rem !important;
+    text-decoration: none !important;
+    opacity: 0.7 !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    font-weight: normal !important;
+    flex: 1 !important;
+    padding: 0 !important;
+}
+
+/* Meta information (points, comments) */
+body.hn-enhanced .meta {
+    display: flex !important;
+    gap: 0.5rem !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    margin: 0 !important;
+}
+
+body.hn-enhanced .meta-button {
+    color: var(--meta-color) !important;
+    font-size: 0.75rem !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.2rem !important;
+    opacity: 0.7 !important;
+}
+
+body.hn-enhanced .meta-button:hover {
+    opacity: 1 !important;
+}
+
+body.hn-enhanced .meta-button svg {
+    width: 14px !important;
+    height: 14px !important;
+    stroke-width: 1.5 !important;
+}
+
+/* Description */
+body.hn-enhanced .description {
+    margin: 0.5rem 0 !important;
+    line-height: 1.4 !important;
+    color: #666 !important;
+    font-size: 0.8rem !important;
+}
+
+/* Tags */
+body.hn-enhanced .tags {
+    margin: 0.25rem 0 !important;
+    line-height: 1.6 !important;
+}
+
+body.hn-enhanced .tag {
+    display: inline-block !important;
+    background: var(--tag-bg) !important;
+    padding: 0.1rem 0.4rem !important;
+    margin-right: 0.3rem !important;
+    margin-bottom: 0.2rem !important;
+    border-radius: 2px !important;
+    font-size: 0.75rem !important;
+    color: var(--text-color) !important;
+}
+
+/* Pagination */
+body.hn-enhanced .pagination {
+    position: sticky !important;
+    top: 1rem !important;
+    width: 50px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.25rem !important;
+    height: fit-content !important;
+}
+
+body.hn-enhanced .pagination a {
+    color: var(--link-color) !important;
+    text-decoration: none !important;
+    padding: 0.25rem !important;
+    text-align: center !important;
+    border-radius: 2px !important;
+    font-size: 0.85rem !important;
+}
+
+body.hn-enhanced .pagination a.active {
+    font-weight: 600 !important;
+    background: var(--tag-bg) !important;
+}
+
+/* Loading indicator */
+body.hn-enhanced .loading-indicator {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--accent-color);
+    animation: spin 1s ease-in-out infinite;
+    margin-left: 8px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    body.hn-enhanced { 
+        flex-direction: column-reverse !important;
+        padding: 1rem !important;
+        gap: 1rem !important;
+    }
+    
+    body.hn-enhanced .pagination {
+        position: static !important;
+        width: 100% !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+    }
+    
+    body.hn-enhanced .pagination a {
+        padding: 0.25rem 0.5rem !important;
+    }
+    
+    body.hn-enhanced h1 { font-size: 1.5rem !important; }
+    body.hn-enhanced .story h2 { font-size: 1.1rem !important; }
+}
